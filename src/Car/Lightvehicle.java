@@ -2,9 +2,40 @@ package Car;
 
 public class Lightvehicle extends Car implements Compete {
 
+    private TypeOfBody typeOfBody;
+    public enum TypeOfBody {
+        SEDAN   ,
+        HATCHBACK,
+        COUPE,
+        UNIVERSALIS,
+        OFF_ROAD_CAR,
+        CROSSOVER,
+        PICKUP,
+        WAGON,
+        MINIVAN;
 
-    public Lightvehicle(String mark, String model, int engineVolume) {
+        private String typeOfCarcase;
+
+
+
+        }
+//        public static Car.Lightvehicle.TypeOfBody check(String type) {
+//            return Car.Lightvehicle.TypeOfBody.valueOf(type);}
+//        }
+//        private Car.Lightvehicle.TypeOfBody typeOfCarcase;
+
+    public Lightvehicle(String mark, String model, int engineVolume,TypeOfBody typeOfBody) {
         super(mark, model, engineVolume);
+        this.typeOfBody = typeOfBody;
+    }
+
+
+    public TypeOfBody getTypeOfBody() {
+        return typeOfBody;
+    }
+
+    public void setTypeOfBody(TypeOfBody typeOfBody) {
+        this.typeOfBody = typeOfBody;
     }
 
     @Override
@@ -13,9 +44,18 @@ public class Lightvehicle extends Car implements Compete {
 
     }
 
+
     @Override
     public void endMoving() {
         System.out.println("Light vehicle end moving");
+
+    }
+
+    @Override
+    public void printType() {
+        if (typeOfBody == null) {
+            System.out.println("Information is not have");
+        } else System.out.println("Type of body"+ typeOfBody);
 
     }
 

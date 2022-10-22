@@ -54,5 +54,7 @@ public abstract class Car {
 
     public abstract void endMoving();
 
+    public abstract void printType();
+
 
 }

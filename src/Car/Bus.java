@@ -2,10 +2,29 @@ package Car;
 
 public class Bus extends Car implements Compete {
 
+    private CapacitySeats capacitySeats;
+
+    public enum CapacitySeats {
+        ESPECIALLY_SMALL, LOW,
+        MIDDLE, BIG,
+        HUGE();
+
+        }
+
+    public CapacitySeats getCapacitySeats() {
+        return capacitySeats;
+    }
+
+    public void setCapacitySeats(CapacitySeats capacitySeats) {
+        this.capacitySeats = capacitySeats;
+    }
+
     public Bus(String mark,
                String model,
-               int engineVolume) {
+               int engineVolume,
+               CapacitySeats capacitySeats) {
         super(mark, model, engineVolume);
+        this.capacitySeats = capacitySeats;
     }
 
     @Override
@@ -17,6 +36,13 @@ public class Bus extends Car implements Compete {
     @Override
     public void endMoving() {
         System.out.println("Bus end moving");
+    }
+
+    @Override
+    public void printType() {
+        if (capacitySeats == null) {
+            System.out.println("Information is not have");
+        } else System.out.println("Type of capacity "+getCapacitySeats());
     }
 
 
