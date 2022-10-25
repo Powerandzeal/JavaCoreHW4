@@ -7,7 +7,8 @@ import Car.Truck;
 public class DriveLicenseTypeC extends Driver <Truck>{
 
 
-    public DriveLicenseTypeC(String fullName, String haveDriveLisens, int driverExpirience, Truck car) {
+    public DriveLicenseTypeC(String fullName, String haveDriveLisens, int driverExpirience, Truck car)
+        throws DriveLicenseException {
         super(fullName, haveDriveLisens, driverExpirience, car);
     }
 

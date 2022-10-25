@@ -8,7 +8,8 @@ public class DriveLicenseTypeD extends Driver<Bus> {
 //    private S String ;
 
 
-    public DriveLicenseTypeD(String fullName, String haveDriveLisens, int driverExpirience, Bus car) {
+    public DriveLicenseTypeD(String fullName, String haveDriveLisens, int driverExpirience, Bus car)
+    throws DriveLicenseException {
         super(fullName, haveDriveLisens, driverExpirience, car);
     }
 

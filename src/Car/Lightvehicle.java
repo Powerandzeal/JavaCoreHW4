@@ -60,6 +60,12 @@ public class Lightvehicle extends Car implements Compete {
     }
 
     @Override
+    public boolean check() {
+
+        return false;
+    }
+
+    @Override
     public String pitStope() {
         return "Light vehicle make a pit stop";
     }

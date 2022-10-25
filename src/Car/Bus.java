@@ -45,6 +45,12 @@ public class Bus extends Car implements Compete {
         } else System.out.println("Type of capacity "+getCapacitySeats());
     }
 
+    @Override
+    public boolean check() {
+
+        return false;
+    }
+
 
     @Override
     public String pitStope() {

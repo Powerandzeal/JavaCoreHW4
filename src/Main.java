@@ -1,11 +1,7 @@
 import Car.Bus;
-import Car.Car;
 import Car.Lightvehicle;
 import Car.Truck;
-import Drivers.DriveLicenseTypeB;
-import Drivers.DriveLicenseTypeC;
-import Drivers.DriveLicenseTypeD;
-import Drivers.Driver;
+import Drivers.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,20 +26,30 @@ public class Main {
         System.out.println(truck4.maxSpeed());
         truck4.endMoving();
 
-        DriveLicenseTypeB mihalysh = new DriveLicenseTypeB (
-                "Mihail Ivanovich",
-                "Cat B", 4,car1);
 
-        DriveLicenseTypeC vova = new DriveLicenseTypeC("ivan",
-                "Cat C",2,truck1);
+        DriveLicenseTypeB mihalysh;
 
-        DriveLicenseTypeD lexa = new DriveLicenseTypeD("Lexa","Cat D",
-                4,bus1);
+        try {
+            DriveLicenseTypeC vova = new DriveLicenseTypeC("ivan",
+                    "",2,truck1);
 
-        mihalysh.info();
-        vova.info();
+            DriveLicenseTypeD lexa = new DriveLicenseTypeD("Lexa","Cat D",
+                    4,bus1);
+            mihalysh = new DriveLicenseTypeB (
+                    "Mihail Ivanovich",
+                    "Cat B", 4,car1);
+            mihalysh.info();
+            vova.info();
 
-        lexa.info();
+            lexa.info();
+
+        } catch (DriveLicenseException e){
+            System.err.println("Error:" + e.getMessage());
+        } catch (RuntimeException e) {
+
+        }
+
+
 
         bus1.printType();
 
@@ -52,6 +58,10 @@ public class Main {
         car1.printType();
 
         System.out.println(bus1.getCapacitySeats());
+
+        car1.check();
+        truck3.check();
+        bus1.check();
 
 
 

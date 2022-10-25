@@ -69,6 +69,12 @@ public class Truck extends Car implements Compete {
     }
 
     @Override
+    public boolean check() {
+        System.out.println(getMark()+"Check is done");
+        return false;
+    }
+
+    @Override
     public String pitStope() {
         return "truck make a pit stop";
     }

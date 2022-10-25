@@ -50,14 +50,24 @@ public abstract class Driver<T extends Car & Compete> {
         this.driverExpirience = driverExpirience;
     }
 
-    public Driver(String fullName, String haveDriveLisens, int driverExpirience, T car) {
+    public Driver(String fullName, String haveDriveLisens, int driverExpirience, T car)
+            throws DriveLicenseException
+    {
         if (fullName != null && !fullName.isEmpty()) {
             this.fullName = fullName;
         } else System.out.println(" Name driver is not correct");
 
-        if (haveDriveLisens != null && haveDriveLisens.isEmpty()) {
-            this.haveDriveLisens = haveDriveLisens;
-        } else haveDriveLisens = "You're not our type";
+//        try {
+            if (haveDriveLisens != null && !haveDriveLisens.isEmpty()) {
+                this.haveDriveLisens = haveDriveLisens;
+            } else
+                throw new DriveLicenseException("Have not license " + fullName);
+                //haveDriveLisens = "You're not our type";
+//        }
+//        catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+
 
         if (driverExpirience > 0) {
             this.driverExpirience = driverExpirience;

@@ -56,5 +56,7 @@ public abstract class Car {
 
     public abstract void printType();
 
+    public abstract boolean check();
+
 
 }
